@@ -79,4 +79,23 @@ app
 
         return service;
 
+    })
+
+    .factory('FillUpService', function ($rootScope) {
+        var service = {};
+
+        service.newFillUp = function(carID, date, mileage, money, amount, gasStation){
+            this.carID = carID;
+            this.date = date;
+            this.mileage = mileage;
+            this.money = money;
+            this.amount = amount;
+            this.gasStation = gasStation;
+        }
+
+        service.addFillUpForCar = function (obj) {
+            $rootScope.currentCar.fillUps.push(obj);
+        };
+
+        return service;
     });
