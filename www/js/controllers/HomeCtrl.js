@@ -1,12 +1,25 @@
-app.controller('HomeCtrl', function ($scope, DB, $timeout, $cordovaVibration) {
+app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopup) {
     $scope.cars = DB.getList('cars');
 
-    $timeout(function () {
-        $scope.loaded = true;
-        if (!!$cordovaVibration) {
-            $cordovaVibration.vibrate(100);
-        }
-    }, 1500);
+    $scope.chooseCar = function(car){
+        CarsService.setCurrentCar(car);
+        $state.go('app.main');
+    };
+
+    $scope.removeCar = function() {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Consume Ice Cream',
+            template: 'Are you sure you want to eat this ice cream?'
+        });
+        confirmPopup.then(function(res) {
+            if(res) {
+                console.log('You are sure');
+            } else {
+                console.log('You are not sure');
+            }
+        });
+    };
+
 })
     .controller('AddCarCtrl', function($scope, CarsService, DB, $state){
         $scope.saveCar = function(newCarName){

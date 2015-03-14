@@ -5,12 +5,30 @@
     <div ng-if="cars.length">
         <p class="welcome">Wybierz swój samochód:</p>
 
-        <div class="card car-chooser" ui-sref="app.main" ng-repeat="car in cars">
-            <div class="item item-text-wrap">
-                {{car.name}}
-                <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
+
+        <div class="row" ng-repeat="car in cars track by $index">
+            <div class="col col-90">
+
+                <div class="card car-chooser" ng-click="chooseCar(car)" >
+                    <div class="item item-text-wrap">
+                        {{car.name}}
+                        <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+
+                <div class="card" ng-click="removeCar(car)">
+                    <div class="item item-assertive">
+                        <i class="ion-trash-a"></i>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+
     </div>
 </div>
 

@@ -32,11 +32,18 @@ app
         return service;
     })
 
-    .factory('CarsService', function(){
+    .factory('CarsService', function($rootScope){
         var service = {};
 
         service.newCar = function(name){
             this.name = name;
+        };
+
+        service.currentCar = null;
+
+        service.setCurrentCar = function(obj){
+            service.currentCar = obj;
+            $rootScope.currentCar = service.currentCar;
         };
 
         return service;

@@ -7599,6 +7599,9 @@ body {
 .car-chooser {
   cursor: pointer; }
 
+.card {
+  margin: 10px 0; }
+
 .welcome {
   font-size: 1.25em;
   padding-top: 30px;
