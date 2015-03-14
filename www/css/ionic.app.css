@@ -7590,6 +7590,12 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+html, body {
+  height: 100%; }
+
+body {
+  background: transparent url(../img/load.jpg) center center no-repeat; }
+
 .car-chooser {
   cursor: pointer; }
 

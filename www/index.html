@@ -14,7 +14,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    
+
     <link href="css/tabSlideBox.css" rel="stylesheet"/>
     <script src="js/tabSlideBox.js"></script>
 
@@ -30,6 +30,10 @@
 </head>
 
 <body ng-app="starter">
-<ion-nav-view></ion-nav-view>
+
+<div ng-show="loaded">
+    <ion-nav-view></ion-nav-view>
+</div>
+
 </body>
 </html>

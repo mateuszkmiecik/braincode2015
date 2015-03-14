@@ -1,7 +1,7 @@
 app.controller('HomeCtrl', function ($scope, CarsService, $timeout, $cordovaVibration) {
     $scope.cars = CarsService.getCars();
-    $timeout(function () {
 
+    $timeout(function () {
     	$scope.test = '';
 
     	if(window.localStorage.getItem('test')){

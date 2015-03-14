@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: transparent url(../img/load.jpg) center center no-repeat;
+}
+
 .car-chooser {
   cursor: pointer;
 }
