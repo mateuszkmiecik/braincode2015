@@ -7622,3 +7622,7 @@ body {
   width: 100%;
   z-index: 10000;
   color: #fff; }
+
+i {
+  color: #666;
+  font-style: italic; }

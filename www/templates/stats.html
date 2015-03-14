@@ -5,19 +5,18 @@
 
              <p class="text-center" ng-show="!fillUps.length">Brak zanotowanych tankowań dla <strong>{{currentCar.name}}</strong></p>
 
-             <div id="chart">
+             <div id="chart" ng-hide="!fillUps.length">
                  <canvas id="line" class="chart chart-line" data="data"
-                         labels="labels" legend="true" series="series"
-                         click="onClick">
+                         labels="labels" legend="true" series="series">
                  </canvas>
              </div>
 
-             <div class="card" ng-repeat="fill in fillUps">
+             <div class="card" ng-repeat="fill in fillUps track by $index">
 
                  <div class="item item-text-wrap">
                      <strong>{{fill.money | currency: 'PLN'}}</strong> /
                      <span>{{fill.amount}} L</span>
-                     <span class="pull-right">{{fill.date | date}}</span>
+                     <span class="pull-right"><i>{{fill.gasStation}}</i> {{fill.date | date}}</span>
                  </div>
              </div>
 
