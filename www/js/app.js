@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'starter.controllers'])
+var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,13 +23,11 @@ var app = angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-
-
-      .state('home', {
-          url: '/',
-          templateUrl: 'templates/mainView.html',
-          controller: 'HomeCtrl'
-      })
+  .state('home', {
+      url: '/',
+      templateUrl: 'templates/mainView.html',
+      controller: 'HomeCtrl'
+  })
 
   .state('app', {
     url: "/app",

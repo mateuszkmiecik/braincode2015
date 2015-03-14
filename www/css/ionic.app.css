@@ -7592,3 +7592,13 @@ a.button {
 
 .car-chooser {
   cursor: pointer; }
+
+.LOADING {
+  background: #000;
+  position: absolute;
+  display: block;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  color: #fff; }
