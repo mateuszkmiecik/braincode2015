@@ -1,3 +1,3 @@
-app.controller('HomeCtrl', function ($scope) {
-        $scope.test = 'no siema';
+app.controller('HomeCtrl', function ($scope, CarsService) {
+        $scope.cars = CarsService.getCars();
     });

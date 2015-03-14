@@ -3,9 +3,10 @@
 </div>
 
 <div class="content has-header">
-    <div class="card">
-        <div class="item item-text-wrap" ui-sref="app.main">
-            This is a basic Card which contains an item that has wrapping text.
+    <div class="card car-chooser" ui-sref="app.main" ng-repeat="car in cars">
+        <div class="item item-text-wrap">
+            {{car.name}}
+            <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
         </div>
     </div>
 </div>
