@@ -2,18 +2,18 @@
   <ion-content>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Ile hajsu</span>
-	    <input type="number" placeholder="Ile hajsu">
+	    <input type="number" ng-model="fillup_money" placeholder="Ile hajsu">
 	  </label>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Ile litrów</span>
-	    <input type="number" placeholder="Ile litrów">
+	    <input type="number" ng-model="fillup_amount" placeholder="Ile litrów">
 	  </label>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Aktualny przebieg</span>
-	    <input type="number" placeholder="Aktualny przebieg">
+	    <input type="number" ng-model="fillup_mileage" placeholder="Aktualny przebieg">
 	  </label>
       <div class="item item-input item-select">
-            <div class="input-label">
+            <div class="input-label" ng-model="fillup_station">
                 Wybierz stację
             </div>
           <label>
@@ -27,8 +27,8 @@
 	    <span class="input-label">Data</span>
 	    <input type="date" placeholder="Data" ng-model="fillup_date">
 	  </label>
-	  <button class="button button-block button-stable" >
-        Dodaj
-      </button>
+	  <div class="padding">
+        <button class="button button-block button-positive" ng-click="saveFillUp(fillup_money, fillup_amount, fillup_mileage, fillup_station, fillup_date)">Dodaj</button>
+      </div>
   </ion-content>
 </ion-view>

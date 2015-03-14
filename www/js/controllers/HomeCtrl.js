@@ -25,12 +25,12 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
         $scope.saveCar = function(newCarName, newCarMileage){
             var Car = new CarsService.newCar(newCarName, newCarMileage);
             DB.saveNew(DB.db, 'cars', Car, function(){
-                $state.go('home');
+                $state.go('home'); // <3
             });
         };
     })
 
-    .controller()('AddCtrl', function($scope, AddService, DB, $state){
+    .controller('AddCtrl', function($scope, AddService, DB, $state){
         $scope.saveFillUp = function(money, amount, mileage, station, date){
             var FillUp = new FillUpService.newFillUp(date, mileage, money, amount, station);
             DB.saveNewFillUp($rootScope.currentCar, $rootScope.currentCar.fillUps, FillUp, function(){
