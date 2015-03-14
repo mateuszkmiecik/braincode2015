@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova'])
+var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova', 'tabSlideBox'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -54,20 +54,19 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.stats', {
+    url: "/stats",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/stats.html"
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('app.settings', {
+      url: "/settings",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/settings.html",
         }
       }
     })
@@ -83,4 +82,11 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
+
+});
+
+app.controller("SlideTabsCtrl", function($scope, $ionicSlideBoxDelegate){
+  $scope.navSlide = function(index) {
+    $ionicSlideBoxDelegate.slide(index, 500);
+  }
 });
