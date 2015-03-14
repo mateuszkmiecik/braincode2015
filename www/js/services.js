@@ -1,5 +1,4 @@
 app.factory('DB', function ($window) {
-
         var service = {};
         service.db = {};
 
@@ -46,7 +45,7 @@ app.factory('DB', function ($window) {
             }
         };
 
-        // table 'cars.stats'
+
         service.removeId = function (context, table, id, cb) {
             var tmp = context[table];
             var item = _.find(tmp, {id: id});

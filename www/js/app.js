@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ngAnimate', 'ionic', 'ngCordova']);
+var app = angular.module('starter', ['ngAnimate', 'ionic', 'ngCordova', 'chart.js']);
 
 app.run(function ($ionicPlatform, $timeout, $rootScope, DB, $state) {
     $ionicPlatform.ready(function () {
@@ -20,7 +20,6 @@ app.run(function ($ionicPlatform, $timeout, $rootScope, DB, $state) {
 
     $timeout(function () {
         $rootScope.loaded = true;
-        $state.go('cars');
     }, 1000);
 })
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -66,7 +65,8 @@ app.run(function ($ionicPlatform, $timeout, $rootScope, DB, $state) {
                 url: "/stats",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/stats.html"
+                        templateUrl: "templates/stats.html",
+                        controller: 'StatsCtrl'
                     }
                 }
             })

@@ -3,7 +3,7 @@ app.controller('FillUpAddCtrl', function ($scope, DB, $state, FillUpService, $ro
     $scope.saveFillUp = function (money, amount, mileage, station, date) {
         var FillUp = new FillUpService.newFillUp(date, mileage, money, amount, station);
         DB.saveNewFillUp($rootScope.currentCar, 'fillUps', FillUp, function () {
-            $state.go('home');
+            $state.go('app.stats');
         });
     };
 });

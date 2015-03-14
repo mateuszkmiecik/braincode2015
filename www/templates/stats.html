@@ -1,13 +1,28 @@
 <ion-view view-title="Statystyki">
-	<ion-tabs class="tabs-positive tabs-icon-only">
-		<ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Warminsko-mazurskie_mapa_fizyczna.png/357px-Warminsko-mazurskie_mapa_fizyczna.png">
-  		</ion-tab>
-		<ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-    		
-  		</ion-tab>
-		<ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
-    		
-  		</ion-tab>
-	</ion-tabs>
+     <div class="content has-header">
+
+         <div class="padding">
+
+             <p class="text-center" ng-show="!fillUps.length">Brak zanotowanych tankowań dla <strong>{{currentCar.name}}</strong></p>
+
+             <div id="chart">
+                 <canvas id="line" class="chart chart-line" data="data"
+                         labels="labels" legend="true" series="series"
+                         click="onClick">
+                 </canvas>
+             </div>
+
+             <div class="card" ng-repeat="fill in fillUps">
+
+                 <div class="item item-text-wrap">
+                     <strong>{{fill.money | currency: 'PLN'}}</strong> /
+                     <span>{{fill.amount}} L</span>
+                     <span class="pull-right">{{fill.date | date}}</span>
+                 </div>
+             </div>
+
+         </div>
+
+
+     </div>
 </ion-view>
