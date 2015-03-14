@@ -1,6 +1,6 @@
 var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova', 'tabSlideBox'])
 
-    .run(function ($ionicPlatform, $timeout, $rootScope, DB) {
+    .run(function ($ionicPlatform, $timeout, $rootScope, DB, $state) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -15,10 +15,12 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
 
         DB.connect();
 
+
         $rootScope.loaded = false;
 
         $timeout(function(){
             $rootScope.loaded = true;
+            $state.go('home');
         }, 1000);
     })
 
