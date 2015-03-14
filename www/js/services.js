@@ -1,12 +1,42 @@
 app
+    .factory('DB', function($window){
+
+        var service = {};
+        service.db = {};
+
+        service.connect = function(){
+            if(!!$window.localStorage.getItem('AppDB')){
+                service.db = JSON.parse($window.localStorage.getItem('AppDB'));
+            }else{
+                service.db = {
+                    cars: []
+                };
+                service.saveDB();
+            }
+        };
+
+        service.getList = function(table){
+            return service.db[table];
+        };
+
+        service.saveNew = function(table, obj, cb){
+            service.db[table].push(obj);
+            service.saveDB();
+            cb();
+        };
+
+        service.saveDB = function(){
+            $window.localStorage.setItem('AppDB', JSON.stringify(service.db));
+        };
+
+        return service;
+    })
+
     .factory('CarsService', function(){
         var service = {};
 
-        service.getCars = function(){
-            return [
-                {name: 'Toyota'},
-                {name: 'BMW'}
-            ];
+        service.newCar = function(name){
+            this.name = name;
         };
 
         return service;

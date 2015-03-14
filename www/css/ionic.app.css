@@ -7599,6 +7599,11 @@ body {
 .car-chooser {
   cursor: pointer; }
 
+.welcome {
+  font-size: 1.25em;
+  padding-top: 30px;
+  text-align: center; }
+
 .LOADING {
   background: #000;
   position: absolute;

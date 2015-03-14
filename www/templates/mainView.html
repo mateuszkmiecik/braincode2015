@@ -1,12 +1,19 @@
-<div class="bar bar-header bar-assertive" ui-sref="app.main">
-    <h1 class="title">Driver {{ test }}</h1>
-</div>
+<div class="content padding">
 
-<div class="content has-header">
-    <div class="card car-chooser" ui-sref="app.main" ng-repeat="car in cars">
-        <div class="item item-text-wrap">
-            {{car.name}}
-            <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
+    <p class="welcome" ng-if="!cars.length">Brak dodanych samochodów.</p>
+
+    <div ng-if="cars.length">
+        <p class="welcome">Wybierz swój samochód:</p>
+
+        <div class="card car-chooser" ui-sref="app.main" ng-repeat="car in cars">
+            <div class="item item-text-wrap">
+                {{car.name}}
+                <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="bar bar-footer bar-balanced" ui-sref="addCar">
+    <div class="title">Dodaj samochód</div>
 </div>

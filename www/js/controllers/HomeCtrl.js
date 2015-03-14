@@ -1,18 +1,18 @@
-app.controller('HomeCtrl', function ($scope, CarsService, $timeout, $cordovaVibration) {
-    $scope.cars = CarsService.getCars();
+app.controller('HomeCtrl', function ($scope, DB, $timeout, $cordovaVibration) {
+    $scope.cars = DB.getList('cars');
 
     $timeout(function () {
-    	$scope.test = '';
-
-    	if(window.localStorage.getItem('test')){
-    		$scope.test = window.localStorage.getItem('test');
-    	}else{
-    		window.localStorage.setItem('test', 'test');
-    	}
-
         $scope.loaded = true;
         if (!!$cordovaVibration) {
             $cordovaVibration.vibrate(100);
         }
     }, 1500);
-});
+})
+    .controller('AddCarCtrl', function($scope, CarsService, DB, $state){
+        $scope.saveCar = function(newCarName){
+            var Car = new CarsService.newCar(newCarName);
+            DB.saveNew('cars', Car, function(){
+                $state.go('home');
+            });
+        };
+    });
