@@ -1,6 +1,5 @@
 <ion-view view-title="Dodaj tankowanie">
   <ion-content>
-    <h1>Dodaj tankowanie</h1>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Ile hajsu</span>
 	    <input type="number" placeholder="Ile hajsu">
@@ -17,14 +16,16 @@
             <div class="input-label">
                 Wybierz stację
             </div>
-            <select>
-                <option>Orlen</option>
-                <option>Statoil</option>
-            </select>
+          <label>
+              <select>
+                  <option>Orlen</option>
+                  <option>Statoil</option>
+              </select>
+          </label>
       </div>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Data</span>
-	    <input type="date" placeholder="Data">
+	    <input type="date" placeholder="Data" ng-model="fillup_date">
 	  </label>
   </ion-content>
 </ion-view>

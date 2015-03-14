@@ -58,7 +58,8 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
                 url: "/add",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/add.html"
+                        templateUrl: "templates/add.html",
+                        controller: 'AddCtrl'
                     }
                 }
             })
@@ -75,7 +76,7 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
                 url: "/settings",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/settings.html",
+                        templateUrl: "templates/settings.html"
                     }
                 }
             })

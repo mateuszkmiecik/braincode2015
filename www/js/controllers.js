@@ -4,4 +4,10 @@ angular.module('starter.controllers', [])
 
         $scope.car = CarsService.currentCar;
 
-    });
+    })
+
+    .controller('AddCtrl', function ($scope)
+        {
+            $scope.fillup_date = new Date();
+        });
+
