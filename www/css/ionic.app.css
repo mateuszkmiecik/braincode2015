@@ -7594,7 +7594,18 @@ html, body {
   height: 100%; }
 
 body {
-  background: transparent url(../img/load.jpg) center center no-repeat; }
+  background: transparent url(../img/load.png) center center no-repeat;
+  background-size: 100%;
+ }
+
+#load {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Raleway';
+    margin-left: 35%;
+    margin-top: 80%;
+    font-size: 2em;
+}
 
 .car-chooser {
   cursor: pointer; }

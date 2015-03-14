@@ -9,6 +9,5 @@ app.controller('StatsCtrl', function($scope, $state, CarsService){
     ];
     $scope.onClick = function (points, evt) {
         console.log(points, evt);
-    };
-
+    }
 });
