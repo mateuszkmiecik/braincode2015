@@ -6,14 +6,14 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
         $state.go('app.main');
     };
 
-    $scope.removeCar = function() {
+    $scope.removeCar = function(id) {
         var confirmPopup = $ionicPopup.confirm({
-            title: 'Consume Ice Cream',
-            template: 'Are you sure you want to eat this ice cream?'
+            title: 'Na pewno?',
+            template: 'Czy na pewno chcesz usunąć ten samochód (również z nim wszystkie dane)?'
         });
         confirmPopup.then(function(res) {
             if(res) {
-                console.log('You are sure');
+                DB.removeId('cars', id);
             } else {
                 console.log('You are not sure');
             }

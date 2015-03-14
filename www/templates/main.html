@@ -1,14 +1,16 @@
 <ion-view>
     <ion-nav-title>Samochód: <strong>{{currentCar.name}}</strong></ion-nav-title>
-  <ion-content has-bouncing="true">
-    <button class="button button-block button-assertive icon-right ion-plus-round" ui-sref="app.add">
-    	Dodaj tankowanie
-    </button>
-    <button class="button button-block button-stable icon-right ion-stats-bars" ui-sref="app.stats">
-    	Statystyki
-    </button>
-    <button class="button button-block button-stable icon-right ion-settings" ui-sref="app.settings">
-    	Ustawienia
-    </button>
-  </ion-content>
+    <ion-content has-bouncing="true">
+        <div class="padding">
+            <button class="button button-block button-assertive icon-right ion-plus-round" ui-sref="app.add">
+                Dodaj tankowanie
+            </button>
+            <button class="button button-block button-stable icon-right ion-stats-bars" ui-sref="app.stats">
+                Statystyki
+            </button>
+            <button class="button button-block button-stable icon-right ion-settings" ui-sref="app.settings">
+                Ustawienia
+            </button>
+        </div>
+    </ion-content>
 </ion-view>
