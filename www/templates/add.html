@@ -13,13 +13,13 @@
 	    <input type="number" ng-model="fillup_mileage" placeholder="Aktualny przebieg">
 	  </label>
       <div class="item item-input item-select">
-            <div class="input-label" ng-model="fillup_station">
+            <div class="input-label">
                 Wybierz stację
             </div>
           <label>
-              <select>
-                  <option>Orlen</option>
-                  <option>Statoil</option>
+              <select ng-model="fillup_station">
+                  <option value="Orlen">Orlen</option>
+                  <option value="Statoil">Statoil</option>
               </select>
           </label>
       </div>
