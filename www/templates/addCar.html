@@ -6,8 +6,11 @@
         <label class="item item-input">
             <input type="text" ng-model="newCarName" placeholder="Nazwa">
         </label>
+        <label class="item item-input">
+			<input type="text" ng-model="newCarMileage" placeholder="Przebieg">
+        </label>
     </div>
     <div class="padding">
-        <button class="button button-block button-positive" ng-click="saveCar(newCarName)">Dodaj</button>
+        <button class="button button-block button-positive" ng-click="saveCar(newCarName, newCarMileage)">Dodaj</button>
     </div>
 </div>

@@ -22,8 +22,8 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
 
 })
     .controller('AddCarCtrl', function($scope, CarsService, DB, $state){
-        $scope.saveCar = function(newCarName){
-            var Car = new CarsService.newCar(newCarName);
+        $scope.saveCar = function(newCarName, newCarMileage){
+            var Car = new CarsService.newCar(newCarName, newCarMileage);
             DB.saveNew(DB.db, 'cars', Car, function(){
                 $state.go('home');
             });
