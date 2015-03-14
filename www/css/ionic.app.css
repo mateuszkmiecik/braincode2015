@@ -7602,6 +7602,12 @@ body {
 .card {
   margin: 10px 0; }
 
+.delete-card {
+  width: 50px; }
+
+.pane {
+  background: #eee; }
+
 .welcome {
   font-size: 1.25em;
   padding-top: 30px;

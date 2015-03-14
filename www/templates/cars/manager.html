@@ -7,9 +7,9 @@
 
 
         <div class="row" ng-repeat="car in cars track by $index">
-            <div class="col col-90">
+            <div class="col col-75">
 
-                <div class="card car-chooser" ng-click="chooseCar(car)" >
+                <div class="card car-chooser" ng-click="chooseCar(car)">
                     <div class="item item-text-wrap">
                         {{car.name}}
                         <i class="ion-arrow-right-b" data-pack="default" data-tags="" style="float: right"></i>
@@ -19,7 +19,7 @@
             </div>
             <div class="col">
 
-                <div class="card" ng-click="removeCar(car.id)">
+                <div class="card delete-card pull-right" ng-click="removeCar(car.id)">
                     <div class="item item-assertive text-center">
                         <i class="ion-trash-a"></i>
                     </div>
@@ -32,6 +32,6 @@
     </div>
 </div>
 
-<div class="bar bar-footer bar-balanced" ui-sref="addCar">
+<div class="bar bar-footer bar-balanced" ui-sref="carsAdd">
     <div class="title">Dodaj samochód</div>
 </div>

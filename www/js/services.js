@@ -1,5 +1,4 @@
-app
-    .factory('DB', function ($window) {
+app.factory('DB', function ($window) {
 
         var service = {};
         service.db = {};
