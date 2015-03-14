@@ -14,13 +14,19 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">Menu</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
-        </ion-item>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Auto
+          </div>
+          <select>
+            <option selected>BMW</option>
+            <option>Toyota</option>
+          </select>
+        </label>
         <ion-item nav-clear menu-close href="#/app/main">
           Main
         </ion-item>
@@ -29,6 +35,9 @@
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/stats">
           Statystyki
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/add">
+          Dodaj tankowanie
         </ion-item>
       </ion-list>
     </ion-content>
