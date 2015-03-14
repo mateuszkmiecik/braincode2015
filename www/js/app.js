@@ -56,11 +56,11 @@ var app = angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.stats', {
+    url: "/stats",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/stats.html"
       }
     }
   })
@@ -84,4 +84,11 @@ var app = angular.module('starter', ['ionic', 'starter.controllers'])
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
+
+});
+
+app.controller("SlideTabsCtrl", function($scope, $ionicSlideBoxDelegate){
+  $scope.navSlide = function(index) {
+    $ionicSlideBoxDelegate.slide(index, 500);
+  }
 });
