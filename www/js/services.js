@@ -63,6 +63,17 @@ app.factory('DB', function ($window) {
             $window.localStorage.setItem('AppDB', JSON.stringify(service.db));
         };
 
+        service.clear = function(cb) {
+            service.db = {
+                cars: []
+            };
+            service.saveDB();
+
+            if(cb){
+                cb();
+            }
+        };
+
         return service;
     })
 
