@@ -78,16 +78,6 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
                         templateUrl: "templates/settings.html"
                     }
                 }
-            })
-
-            .state('app.single', {
-                url: "/playlists/:playlistId",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/playlist.html",
-                        controller: 'PlaylistCtrl'
-                    }
-                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/');
