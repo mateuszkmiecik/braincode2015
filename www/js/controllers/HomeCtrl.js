@@ -1,5 +1,5 @@
 app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopup) {
-    $scope.cars = DB.getList('cars');
+    $scope.cars = DB.getList(DB.db, 'cars');
 
     $scope.chooseCar = function(car){
         CarsService.setCurrentCar(car);
@@ -13,7 +13,7 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
         });
         confirmPopup.then(function(res) {
             if(res) {
-                DB.removeId('cars', id);
+                DB.removeId(DB.db, 'cars', id);
             } else {
                 console.log('You are not sure');
             }
@@ -24,7 +24,7 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
     .controller('AddCarCtrl', function($scope, CarsService, DB, $state){
         $scope.saveCar = function(newCarName){
             var Car = new CarsService.newCar(newCarName);
-            DB.saveNew('cars', Car, function(){
+            DB.saveNew(DB.db, 'cars', Car, function(){
                 $state.go('home');
             });
         };

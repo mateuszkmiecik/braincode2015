@@ -15,12 +15,14 @@ app
             }
         };
 
-        service.getList = function (table) {
-            return service.db[table];
+        service.getList = function (context, table) {
+            return context[table];
         };
 
-        service.saveNew = function (table, obj, cb) {
-            var id = _.max(service.db[table], function (o) {
+        service.saveNew = function (context, table, obj, cb) {
+
+            // ogarnianie nowego idka
+            var id = _.max(context[table], function (o) {
                 return o.id
             });
             if (id < 0) {
@@ -28,14 +30,18 @@ app
             } else {
                 obj.id = id.id + 1;
             }
-            service.db[table].push(obj);
+
+
+            context[table].push(obj);
             service.saveDB();
-            cb();
+            if(cb) {
+                cb();
+            }
         };
 
         // table 'cars.stats'
-        service.removeId = function (table, id, cb) {
-            var tmp = service.db[table];
+        service.removeId = function (context, table, id, cb) {
+            var tmp = context[table];
             var item = _.find(tmp, {id: id});
 
             var index = _.indexOf(tmp, item);
@@ -57,8 +63,11 @@ app
     .factory('CarsService', function ($rootScope) {
         var service = {};
 
-        service.newCar = function (name) {
+        service.newCar = function (name, mileage) {
             this.name = name;
+            this.mileage = mileage;
+            this.avgCombustion = 0;
+            this.fillUps = [];
         };
 
         service.currentCar = null;
