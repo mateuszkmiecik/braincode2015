@@ -93,9 +93,5 @@ app
             this.gasStation = gasStation;
         }
 
-        service.addFillUpForCar = function (obj) {
-            $rootScope.currentCar.fillUps.push(obj);
-        };
-
         return service;
     });

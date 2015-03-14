@@ -15,7 +15,6 @@ var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers'
 
         DB.connect();
 
-
         $rootScope.loaded = false;
 
         $timeout(function(){
