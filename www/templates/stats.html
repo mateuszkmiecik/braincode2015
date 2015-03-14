@@ -1,0 +1,62 @@
+<ion-view view-title="Statystyki">
+	<ion-tabs class="tabs-positive tabs-icon-only">
+    	<ion-tab title="Home" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+            <ion-content>
+                <ion-slide-box ng-controller="ExampleController" pager-click="navSlide(index)" auto-play="true" does-continue="true">
+                    <ion-slide>
+                        <img style="width: 100%" src="http://upload.wikimedia.org/wikipedia/commons/7/79/2001_BMW_Z3_Sideview_Topdown_Topaz_Blue_2.5i.jpg">
+                    </ion-slide>
+                    <ion-slide>
+                        <img style="width: 100%" src="http://upload.wikimedia.org/wikipedia/commons/2/2e/BMW_Z3_1.9L_1998.jpg">
+                    </ion-slide>
+                    <ion-slide>
+                        <img style="width: 100%" src="http://www.bmwblog.com/wp-content/uploads/bmw-z3-black.jpg">
+                    </ion-slide>
+                </ion-slide-box>
+            </ion-content>
+        </ion-tab>
+ 
+        <ion-tab title="About" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+            <ion-content>
+                <ion-slide-box ng-controller="ExampleController" pager-click="navSlide(index)" auto-play="true" does-continue="true">
+                    <ion-slide>
+                        <img style="width: 100%" src="http://autorentic.net/wp-content/uploads/2014/10/bmw-z3-interior-wallpaper-bmw-z3-32-pictures.jpg">
+                    </ion-slide>
+                    <ion-slide>
+                        <img style="width: 100%" src="http://images.gtcarlot.com/pictures/54715743.jpg">
+                    </ion-slide>
+                    <ion-slide>
+                        <img style="width: 100%" src="http://jonsibal.com/blog/wp-content/gallery/mroadster/mroadster_11.jpg">
+                    </ion-slide>
+                </ion-slide-box>
+            </ion-content>
+        </ion-tab>
+ 
+        <ion-tab title="Settings" icon-on="ion-ios7-information" icon-off="ion-ios7-information-outline">
+            <ion-content>
+                <div class="card">
+                    <div class="item item-divider">
+                        Some title here
+                    </div>
+                    <div class="item item-text-wrap">
+                        <img style="width: 100%" src="https://maps.googleapis.com/maps/api/staticmap?center=-15.800513,-47.91378&zoom=11&size=600x300">
+                    </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-ios7-telephone"></i>
+                            Call
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-ios7-email"></i>
+                            Email
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-share"></i>
+                            Share
+                        </a>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>
