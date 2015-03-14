@@ -39,6 +39,14 @@ app
             }
         };
 
+        service.saveNewFillUp = function (context, table, obj, cb){
+            context[table].push(obj);
+            service.saveDB();
+            if(cb){
+                cb();
+            }
+        };
+
         // table 'cars.stats'
         service.removeId = function (context, table, id, cb) {
             var tmp = context[table];
@@ -84,14 +92,13 @@ app
     .factory('FillUpService', function ($rootScope) {
         var service = {};
 
-        service.newFillUp = function(carID, date, mileage, money, amount, gasStation){
-            this.carID = carID;
+        service.newFillUp = function(date, mileage, money, amount, gasStation){
             this.date = date;
             this.mileage = mileage;
             this.money = money;
             this.amount = amount;
             this.gasStation = gasStation;
-        }
+        };
 
         service.addFillUpForCar = function (obj) {
             $rootScope.currentCar.fillUps.push(obj);
