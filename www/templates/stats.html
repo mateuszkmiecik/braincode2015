@@ -11,6 +11,13 @@
                  </canvas>
              </div>
 
+             <div class="card" ng-hide="!fillUps.length">
+                 <div class="item item-text-wrap">
+                     Średnia cena za litr: {{avgPrice }} zł
+                     <div class="pull-right">Przejechane: {{ride}} km</div>
+                 </div>
+             </div>
+
              <div class="card" ng-repeat="fill in fillUps track by $index">
 
                  <div class="item item-text-wrap">

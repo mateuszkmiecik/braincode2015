@@ -4,7 +4,7 @@
 			<li class="item item-toggle">
 				Lokalizacja
 				<label class="toggle toggle-assertive">
-					<input type="checkbox">
+					<input type="checkbox" ng-model="location" ng-change="checkLocation()">
 					<div class="track">
 						<div class="handle"></div>
 					</div>
@@ -20,6 +20,13 @@
 				</label>
 			</li>
 		</ul>
+
+		<div class="card">
+			<div class="item item-text-wrap icon-left ion-android-globe" ng-show="location">
+				Twoja pozycja: {{actPos.lon}} <span ng-if="!loadingText">,</span> {{actPos.lat}} {{loadingText}}.
+			</div>
+		</div>
+
 		<div class="padding">
 			<button class="button button-block button-dark icon-right ion-nuclear" ng-click="resetData()">
 				RESET DATA

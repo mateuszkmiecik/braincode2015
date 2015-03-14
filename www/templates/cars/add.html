@@ -2,15 +2,17 @@
     <div class="h1 title">Nowy samochód</div>
 </div>
 <div class="content has-header">
+    <form name="addCarForm">
     <div class="list list-inset">
         <label class="item item-input">
-            <input type="text" ng-model="newCarName" placeholder="Nazwa">
+            <input type="text" ng-model="newCarName" placeholder="Nazwa" required>
         </label>
         <label class="item item-input">
-            <input type="number" ng-model="newCarMileage" placeholder="Przebieg">
+            <input type="number" ng-model="newCarMileage" placeholder="Przebieg" required>
         </label>
     </div>
     <div class="padding">
-        <button class="button button-block button-positive" ng-click="saveCar(newCarName, newCarMileage)">Dodaj</button>
+        <button class="button button-block button-positive" ng-disabled="!addCarForm.$valid" ng-click="saveCar(newCarName, newCarMileage)">Dodaj</button>
     </div>
+    </form>
 </div>

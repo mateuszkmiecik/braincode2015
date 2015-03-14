@@ -1,4 +1,4 @@
-app.controller('SettingsCtrl', function ($scope, DB, $state, $ionicPopup){
+app.controller('SettingsCtrl', function ($scope, DB, $state, $ionicPopup, $cordovaGeolocation){
 	$scope.resetData = function() {
 		var confirmPopup = $ionicPopup.confirm({
 			title: 'Na pewno?',
@@ -17,4 +17,40 @@ app.controller('SettingsCtrl', function ($scope, DB, $state, $ionicPopup){
 			}
 		});
 	}
+
+	$scope.checkLocation = function() {
+		var posOpt = {
+			timeout: 20000,
+			enableHighAccuracy: true
+		};
+		document.addEventListener("deviceready", function () {
+				$scope.loadingText = '...'
+				$cordovaGeolocation.getCurrentPosition(posOpt)
+				.then(function(position){
+					var latitude = position.coords.latitude;
+					var longitude = position.coords.longitude;
+
+					$scope.actPos = {
+						lat: latitude,
+						lon: longitude,
+						noerror: true,
+						errMsg: ""
+					};
+
+					$scope.loadingText = '';
+
+
+				}, function(error) {
+					$scope.actPos = {
+						lat: undefined,
+						lon: undefined,
+						noerror: false,
+						errMsg: error
+					};
+
+					$scope.loadingText = 'wystąpił błąd'
+				});
+
+		});
+	};
 });
