@@ -30,10 +30,10 @@ app.controller('HomeCtrl', function ($scope, DB, CarsService, $state, $ionicPopu
         };
     })
 
-    .controller('AddCtrl', function($scope, AddService, DB, $state){
+    .controller('AddCtrl', function($scope, DB, $state, FillUpService, $rootScope){
         $scope.saveFillUp = function(money, amount, mileage, station, date){
             var FillUp = new FillUpService.newFillUp(date, mileage, money, amount, station);
-            DB.saveNewFillUp($rootScope.currentCar, $rootScope.currentCar.fillUps, FillUp, function(){
+            DB.saveNewFillUp($rootScope.currentCar, 'fillUps', FillUp, function(){
                 $state.go('home');
             });
         };
