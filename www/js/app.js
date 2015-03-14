@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova', 'tabSlideBox'])
+var app = angular.module('starter', ['ngAnimate', 'ionic', 'starter.controllers', 'ngCordova'])
 
     .run(function ($ionicPlatform, $timeout, $rootScope, DB) {
         $ionicPlatform.ready(function () {

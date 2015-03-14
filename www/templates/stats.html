@@ -1,28 +1,13 @@
 <ion-view view-title="Statystyki">
-	<div class="content has-header">
-		<tab-slide-box>
-	        <div class="tsb-icons">
-	            <div class="tsb-ic-wrp">
-	                <a href="javascript:;" class="ion-social-usd"></a>
-	                <a href="javascript:;" class=""><img src="img/kanister_filled.png" alt=""></a>
-	                <a href="javascript:;" class=""><img src="img/mileage.png" alt=""></a>
-	                <a href="javascript:;" class="ion-android-star"></a>
-	            </div>
-	        </div>
-	        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
-	            <ion-slide>
-	                <h1>Wydatki</h1>
-	            </ion-slide>
-	            <ion-slide>
-	                <h1>Spalanie</h1>
-	            </ion-slide>
-	            <ion-slide>
-	                <h1>Przebieg</h1>
-	            </ion-slide>
-	            <ion-slide>
-	                <h1>Stacje benzynowe</h1>
-	            </ion-slide>
-	        </ion-slide-box>
-	    </tab-slide-box>
-	</div>
+	<ion-tabs class="tabs-positive tabs-icon-only">
+		<ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Warminsko-mazurskie_mapa_fizyczna.png/357px-Warminsko-mazurskie_mapa_fizyczna.png">
+  		</ion-tab>
+		<ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    		
+  		</ion-tab>
+		<ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+    		
+  		</ion-tab>
+	</ion-tabs>
 </ion-view>
