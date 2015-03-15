@@ -1,3 +1,3 @@
 # braincode2015
 
-Projekt aplikacji wykonanej w ramach hackatonu braincode.mobi 2015
+Projekt aplikacji wykonanej w ramach hackathonu braincode.mobi 2015
